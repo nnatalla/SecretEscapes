@@ -56,6 +56,8 @@ Expected response:
 ```
 
 ## Project Structure
+
+```
 hotel-cancellation-api/
 ├── src/
 │   ├── features.py      # Feature definitions: column lists, pipeline factory.
@@ -75,6 +77,7 @@ hotel-cancellation-api/
 ├── data/                # Gitignored. CSV downloaded by 'make train'.
 ├── Dockerfile           # Multi-stage build. Runtime image ~250MB.
 └── Makefile             # Project control centre.
+```
 ## Architecture & Design Decisions
 
 ### Training/serving skew prevention
