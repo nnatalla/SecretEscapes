@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hotel-cancellation-api"
+version = "0.1.0"
+description = "ML-powered hotel booking cancellation prediction"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+exclude = [".venv", "models", "data", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+# B = flake8-bugbear (catches real bugs)
+# SIM = flake8-simplify (catches unnecessary complexity)
+ignore = ["E501", "B008"]
+# B008: FastAPI uses function calls in default args (Depends) — ignore globally
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "src"]
+
+[tool.coverage.run]
+omit = ["tests/*", "src/train.py"]
+# train.py excluded: it downloads data and runs for minutes,
+# not suitable for coverage measurement
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+# Note: set PYTHONPATH=. before running pytest (handled in Makefile)
