@@ -69,9 +69,9 @@ hotel-cancellation-api/
 │   ├── conftest.py      # Shared fixtures and SAMPLE_BOOKING constant.
 │   ├── test_api.py      # Endpoint integration tests (mocked predictor).
 │   └── test_predictor.py # Predictor unit tests (no disk I/O).
-├── models/              # Gitignored. Created by 'make train'.
-│   ├── model.joblib     # Serialized sklearn Pipeline.
-│   └── metadata.json    # Training metadata and metrics.
+├── models/              # Pre-trained model included for convenience.
+│   ├── model.joblib     # Run 'make train' to retrain from scratch.
+│   └── metadata.json    # Training metadata and evaluation metrics.
 ├── data/                # Gitignored. CSV downloaded by 'make train'.
 ├── Dockerfile           # Multi-stage build. Runtime image ~250MB.
 └── Makefile             # Project control centre.
