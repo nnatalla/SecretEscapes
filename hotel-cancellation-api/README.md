@@ -9,7 +9,7 @@ with FastAPI, scikit-learn, and Docker. Python 3.11.
 ## Prerequisites
 
 - Python 3.11+
-- Docker (for containerised run)
+- Docker 
 - GNU Make
 
 ## Quick Start
